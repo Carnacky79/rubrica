@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Xml;
 
 namespace Rubrica
 {
     public partial class Form1 : Form
     {
+        internal static Form1 form1;
         public Form1()
         {
             InitializeComponent();
+            form1 = this;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -23,17 +27,15 @@ namespace Rubrica
             this.nominativiTableAdapter.Fill(this.dataSet1.nominativi);
 
             LoadList();
-
-
         }
 
-        private void btnSalva_Click(object sender, EventArgs e)
+        public void UpdateList()
         {
-            this.Validate();
-            this.nominativiBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet1);
+            this.nominativiTableAdapter.Fill(this.dataSet1.nominativi);
 
+            LoadList();
         }
+
 
         private void LoadList()
         {
@@ -153,7 +155,22 @@ namespace Rubrica
             
         }
 
+        private void btnOrderCognomeAsc_Click(object sender, EventArgs e)
+        {
+            this.nominativiTableAdapter.orderByCognomeAsc(this.dataSet1.nominativi);
+            LoadList();
+        }
 
+        private void btnOrderCognomeDesc_Click(object sender, EventArgs e)
+        {
+            this.nominativiTableAdapter.orderByCognomeDesc(this.dataSet1.nominativi);
+            LoadList();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
     }
 }
