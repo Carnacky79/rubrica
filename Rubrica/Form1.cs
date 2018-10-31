@@ -129,7 +129,11 @@ namespace Rubrica
             string cognome = srcTxtCognome.Text;
             string tel = srcTxtTelefono.Text;
 
-            if(string.IsNullOrEmpty(nome) && string.IsNullOrEmpty(cognome) && string.IsNullOrEmpty(tel))
+            nome = string.IsNullOrEmpty(nome) ? nome : nome + "%";
+            cognome = string.IsNullOrEmpty(cognome) ? cognome : cognome + "%";
+            tel = string.IsNullOrEmpty(tel) ? tel : tel + "%";
+
+            if (string.IsNullOrEmpty(nome) && string.IsNullOrEmpty(cognome) && string.IsNullOrEmpty(tel))
             {
                 this.nominativiTableAdapter.Fill(this.dataSet1.nominativi);
             }
