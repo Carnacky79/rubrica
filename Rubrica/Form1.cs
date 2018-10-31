@@ -23,7 +23,14 @@ namespace Rubrica
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.nominativiTableAdapter.Fill(this.dataSet1.nominativi);
+            try
+            {
+                this.nominativiTableAdapter.Fill(this.dataSet1.nominativi);
+            }
+            catch
+            {
+                findDB();
+            }
 
             LoadList();
 
@@ -42,6 +49,7 @@ namespace Rubrica
 
         private void loadComboBox()
         {
+            cbAlfabeto.Items.Clear();
             Dictionary<char, int> dctOccur = new Dictionary<char, int>();
 
             char[] letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
@@ -246,6 +254,11 @@ namespace Rubrica
 
         private void sourceToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            findDB();
+        }
+
+        private void findDB()
+        {
             var filePath = string.Empty;
 
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -271,7 +284,7 @@ namespace Rubrica
                     this.nominativiTableAdapter.Fill(this.dataSet1.nominativi);
 
                     LoadList();
-
+                    loadComboBox();
                 }
             }
         }
