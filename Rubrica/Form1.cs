@@ -172,5 +172,15 @@ namespace Rubrica
             this.Close();
         }
 
+        private void aggiornaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateList();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            aboutBox ab = new aboutBox();
+            ab.Show();
+        }
     }
 }
