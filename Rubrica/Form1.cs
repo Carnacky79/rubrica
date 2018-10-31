@@ -43,15 +43,19 @@ namespace Rubrica
 
         private void loadComboBox()
         {
-            char[] letters = {'a','b','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+            Dictionary<char, int> dctOccur = new Dictionary<char, int>();
+
+            char[] letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 
             string[] strLetters = null;
             Array.Resize(ref strLetters, letters.Length);
 
             for (int i = 0; i < letters.Length; i++)
             {
-                strLetters[letters[i]] = new string(letters[i], 1);
-                strLetters[letters[i]] = strLetters[letters[i]].ToUpper();
+                strLetters[i] = new string(letters[i], 1);
+                strLetters[i] = strLetters[i].ToUpper();
+
+                dctOccur.Add(strLetters[i][0], 0);
             }
 
             DataTable dtable = dataSet1.Tables["nominativi"];
@@ -66,11 +70,19 @@ namespace Rubrica
                 if (drow.RowState != DataRowState.Deleted)
                 {
                     firstLetter = drow["cognome"].ToString()[0];
-                    
+
+                    dctOccur[firstLetter] += 1;
                 }
             }
 
-            cbAlfabeto.ComboBox.DataSource = strLetters;
+            foreach (char key in dctOccur.Keys)
+            {
+                if(dctOccur[key] > 0)
+                {
+                    cbAlfabeto.Items.Add(key);
+                }
+            }
+
         }
 
         private void LoadList()
@@ -103,9 +115,12 @@ namespace Rubrica
 
         private void cbAlfabeto_SelectedIndexChanged(Object sender, EventArgs e)
         {
+            string firstLet = cbAlfabeto.ComboBox.SelectedItem.ToString();
+            firstLet = firstLet + "%";
 
-            MessageBox.Show("You are in the ToolStripComboBox.SelectedIndexChanged event.");
+            this.nominativiTableAdapter.FirstLetter(this.dataSet1.nominativi, firstLet);
 
+            LoadList();
         }
 
         private void scrBtn_Click(object sender, EventArgs e)

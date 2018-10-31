@@ -62,10 +62,6 @@
             this.btnOrderNomeDesc = new System.Windows.Forms.Button();
             this.btnOrderCognomeDesc = new System.Windows.Forms.Button();
             this.btnOrderCognomeAsc = new System.Windows.Forms.Button();
-            this.dataSet1 = new Rubrica.DataSet1();
-            this.nominativiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nominativiTableAdapter = new Rubrica.DataSet1TableAdapters.nominativiTableAdapter();
-            this.tableAdapterManager = new Rubrica.DataSet1TableAdapters.TableAdapterManager();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aggiornaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,11 +70,15 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cbAlfabeto = new System.Windows.Forms.ToolStripComboBox();
+            this.dataSet1 = new Rubrica.DataSet1();
+            this.nominativiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nominativiTableAdapter = new Rubrica.DataSet1TableAdapters.nominativiTableAdapter();
+            this.tableAdapterManager = new Rubrica.DataSet1TableAdapters.TableAdapterManager();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nominativiBindingSource)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView
@@ -388,33 +388,13 @@
             this.btnOrderCognomeAsc.UseVisualStyleBackColor = true;
             this.btnOrderCognomeAsc.Click += new System.EventHandler(this.btnOrderCognomeAsc_Click);
             // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // nominativiBindingSource
-            // 
-            this.nominativiBindingSource.DataMember = "nominativi";
-            this.nominativiBindingSource.DataSource = this.dataSet1;
-            // 
-            // nominativiTableAdapter
-            // 
-            this.nominativiTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.nominativiTableAdapter = this.nominativiTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Rubrica.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.cbAlfabeto});
+            this.cbAlfabeto,
+            this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -435,19 +415,19 @@
             // aggiornaToolStripMenuItem
             // 
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
-            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
             this.aggiornaToolStripMenuItem.Click += new System.EventHandler(this.aggiornaToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(120, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -462,19 +442,34 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // cbAlfabeto
             // 
-            this.cbAlfabeto.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D"});
             this.cbAlfabeto.Name = "cbAlfabeto";
-            this.cbAlfabeto.Size = new System.Drawing.Size(20, 20);
+            this.cbAlfabeto.Size = new System.Drawing.Size(75, 23);
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nominativiBindingSource
+            // 
+            this.nominativiBindingSource.DataMember = "nominativi";
+            this.nominativiBindingSource.DataSource = this.dataSet1;
+            // 
+            // nominativiTableAdapter
+            // 
+            this.nominativiTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.nominativiTableAdapter = this.nominativiTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Rubrica.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // Form1
             // 
@@ -498,10 +493,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nominativiBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nominativiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
