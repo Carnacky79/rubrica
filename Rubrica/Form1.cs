@@ -27,6 +27,10 @@ namespace Rubrica
             this.nominativiTableAdapter.Fill(this.dataSet1.nominativi);
 
             LoadList();
+
+            loadComboBox();
+
+            this.cbAlfabeto.SelectedIndexChanged += new System.EventHandler(this.cbAlfabeto_SelectedIndexChanged);
         }
 
         public void UpdateList()
@@ -39,8 +43,34 @@ namespace Rubrica
 
         private void loadComboBox()
         {
-            char[] letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+            char[] letters = {'a','b','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 
+            string[] strLetters = null;
+            Array.Resize(ref strLetters, letters.Length);
+
+            for (int i = 0; i < letters.Length; i++)
+            {
+                strLetters[letters[i]] = new string(letters[i], 1);
+                strLetters[letters[i]] = strLetters[letters[i]].ToUpper();
+            }
+
+            DataTable dtable = dataSet1.Tables["nominativi"];
+            char firstLetter;
+
+
+            for (int i = 0; i < dtable.Rows.Count; i++)
+            {
+                DataRow drow = dtable.Rows[i];
+
+                // Only row that have not been deleted
+                if (drow.RowState != DataRowState.Deleted)
+                {
+                    firstLetter = drow["cognome"].ToString()[0];
+                    
+                }
+            }
+
+            cbAlfabeto.ComboBox.DataSource = strLetters;
         }
 
         private void LoadList()
@@ -69,6 +99,13 @@ namespace Rubrica
                     listView.Items.Add(lvi);
                 }
             }
+        }
+
+        private void cbAlfabeto_SelectedIndexChanged(Object sender, EventArgs e)
+        {
+
+            MessageBox.Show("You are in the ToolStripComboBox.SelectedIndexChanged event.");
+
         }
 
         private void scrBtn_Click(object sender, EventArgs e)
@@ -188,5 +225,6 @@ namespace Rubrica
             aboutBox ab = new aboutBox();
             ab.Show();
         }
+
     }
 }
