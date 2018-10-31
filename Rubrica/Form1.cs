@@ -23,7 +23,6 @@ namespace Rubrica
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: questa riga di codice carica i dati nella tabella 'dataSet1.nominativi'. È possibile spostarla o rimuoverla se necessario.
             this.nominativiTableAdapter.Fill(this.dataSet1.nominativi);
 
             LoadList();
@@ -67,9 +66,9 @@ namespace Rubrica
                 DataRow drow = dtable.Rows[i];
 
                 // Only row that have not been deleted
-                if (drow.RowState != DataRowState.Deleted)
+                if ((drow.RowState != DataRowState.Deleted) && !string.IsNullOrEmpty(drow["cognome"].ToString()))
                 {
-                    firstLetter = drow["cognome"].ToString()[0];
+                    firstLetter = drow["cognome"].ToString().ToUpper()[0];
 
                     dctOccur[firstLetter] += 1;
                 }
@@ -245,5 +244,36 @@ namespace Rubrica
             ab.Show();
         }
 
+        private void sourceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var filePath = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Access Database (*.mdb)|*.mdb";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+
+                    this.nominativiTableAdapter.Connection.Close();
+                    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                    config.ConnectionStrings.ConnectionStrings.Remove("Rubrica.Properties.Settings.rubricaConnectionString");
+                    config.ConnectionStrings.ConnectionStrings.Add(new ConnectionStringSettings("Rubrica.Properties.Settings.rubricaConnectionString", "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + filePath));
+                    config.Save(ConfigurationSaveMode.Modified);
+                    ConfigurationManager.RefreshSection("connectionStrings");
+
+                    this.nominativiTableAdapter.Connection.ConnectionString = config.ConnectionStrings.ConnectionStrings["Rubrica.Properties.Settings.rubricaConnectionString"].ToString();
+                    this.nominativiTableAdapter.Connection.Open();
+                    this.nominativiTableAdapter.Fill(this.dataSet1.nominativi);
+
+                    LoadList();
+
+                }
+            }
+        }
     }
 }

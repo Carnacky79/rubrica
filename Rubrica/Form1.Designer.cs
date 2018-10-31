@@ -67,13 +67,14 @@
             this.aggiornaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbAlfabeto = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cbAlfabeto = new System.Windows.Forms.ToolStripComboBox();
             this.dataSet1 = new Rubrica.DataSet1();
             this.nominativiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nominativiTableAdapter = new Rubrica.DataSet1TableAdapters.nominativiTableAdapter();
             this.tableAdapterManager = new Rubrica.DataSet1TableAdapters.TableAdapterManager();
+            this.sourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -406,6 +407,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aggiornaToolStripMenuItem,
+            this.sourceToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -431,6 +433,11 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // cbAlfabeto
+            // 
+            this.cbAlfabeto.Name = "cbAlfabeto";
+            this.cbAlfabeto.Size = new System.Drawing.Size(75, 23);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -442,14 +449,9 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // cbAlfabeto
-            // 
-            this.cbAlfabeto.Name = "cbAlfabeto";
-            this.cbAlfabeto.Size = new System.Drawing.Size(75, 23);
             // 
             // dataSet1
             // 
@@ -470,6 +472,13 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.nominativiTableAdapter = this.nominativiTableAdapter;
             this.tableAdapterManager.UpdateOrder = Rubrica.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // sourceToolStripMenuItem
+            // 
+            this.sourceToolStripMenuItem.Name = "sourceToolStripMenuItem";
+            this.sourceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sourceToolStripMenuItem.Text = "Source";
+            this.sourceToolStripMenuItem.Click += new System.EventHandler(this.sourceToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -549,6 +558,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox cbAlfabeto;
+        private System.Windows.Forms.ToolStripMenuItem sourceToolStripMenuItem;
     }
 }
 
