@@ -37,6 +37,7 @@ namespace Rubrica
             loadComboBox();
 
             this.cbAlfabeto.SelectedIndexChanged += new System.EventHandler(this.cbAlfabeto_SelectedIndexChanged);
+
         }
 
         public void UpdateList()
@@ -55,6 +56,7 @@ namespace Rubrica
             char[] letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 
             string[] strLetters = null;
+            string item = null;
             Array.Resize(ref strLetters, letters.Length);
 
             for (int i = 0; i < letters.Length; i++)
@@ -86,7 +88,8 @@ namespace Rubrica
             {
                 if(dctOccur[key] > 0)
                 {
-                    cbAlfabeto.Items.Add(key);
+                    item = key + " - (" + dctOccur[key] + ")"; 
+                    cbAlfabeto.Items.Add(item);
                 }
             }
 
@@ -118,16 +121,20 @@ namespace Rubrica
                     listView.Items.Add(lvi);
                 }
             }
+
+            txtTot.Text = listView.Items.Count.ToString();
         }
 
         private void cbAlfabeto_SelectedIndexChanged(Object sender, EventArgs e)
         {
             string firstLet = cbAlfabeto.ComboBox.SelectedItem.ToString();
-            firstLet = firstLet + "%";
+            firstLet = firstLet[0] + "%";
 
             this.nominativiTableAdapter.FirstLetter(this.dataSet1.nominativi, firstLet);
 
             LoadList();
+
+            
         }
 
         private void scrBtn_Click(object sender, EventArgs e)

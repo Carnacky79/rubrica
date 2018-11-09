@@ -76,6 +76,8 @@
             this.nominativiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nominativiTableAdapter = new Rubrica.DataSet1TableAdapters.nominativiTableAdapter();
             this.tableAdapterManager = new Rubrica.DataSet1TableAdapters.TableAdapterManager();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtTot = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -97,11 +99,10 @@
             this.columnHeader4});
             this.listView.FullRowSelect = true;
             this.listView.GridLines = true;
-            this.listView.Location = new System.Drawing.Point(17, 32);
-            this.listView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listView.Location = new System.Drawing.Point(13, 26);
             this.listView.MultiSelect = false;
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(1043, 473);
+            this.listView.Size = new System.Drawing.Size(783, 385);
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -136,21 +137,18 @@
             this.groupBox1.Controls.Add(this.srcTxtCognome);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.srcTxtNome);
-            this.groupBox1.Location = new System.Drawing.Point(17, 513);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(13, 417);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(261, 170);
+            this.groupBox1.Size = new System.Drawing.Size(196, 138);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ricerca";
             // 
             // scrBtn
             // 
-            this.scrBtn.Location = new System.Drawing.Point(103, 132);
-            this.scrBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.scrBtn.Location = new System.Drawing.Point(77, 107);
             this.scrBtn.Name = "scrBtn";
-            this.scrBtn.Size = new System.Drawing.Size(151, 28);
+            this.scrBtn.Size = new System.Drawing.Size(113, 23);
             this.scrBtn.TabIndex = 6;
             this.scrBtn.Text = "Cerca";
             this.scrBtn.UseVisualStyleBackColor = true;
@@ -159,55 +157,49 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 101);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(6, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 17);
+            this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Telefono:";
             // 
             // srcTxtTelefono
             // 
-            this.srcTxtTelefono.Location = new System.Drawing.Point(103, 97);
-            this.srcTxtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.srcTxtTelefono.Location = new System.Drawing.Point(77, 79);
             this.srcTxtTelefono.Name = "srcTxtTelefono";
-            this.srcTxtTelefono.Size = new System.Drawing.Size(149, 22);
+            this.srcTxtTelefono.Size = new System.Drawing.Size(113, 20);
             this.srcTxtTelefono.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 64);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(6, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 17);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Cognome:";
             // 
             // srcTxtCognome
             // 
-            this.srcTxtCognome.Location = new System.Drawing.Point(103, 60);
-            this.srcTxtCognome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.srcTxtCognome.Location = new System.Drawing.Point(77, 49);
             this.srcTxtCognome.Name = "srcTxtCognome";
-            this.srcTxtCognome.Size = new System.Drawing.Size(149, 22);
+            this.srcTxtCognome.Size = new System.Drawing.Size(113, 20);
             this.srcTxtCognome.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(6, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nome:";
             // 
             // srcTxtNome
             // 
-            this.srcTxtNome.Location = new System.Drawing.Point(103, 23);
-            this.srcTxtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.srcTxtNome.Location = new System.Drawing.Point(77, 19);
             this.srcTxtNome.Name = "srcTxtNome";
-            this.srcTxtNome.Size = new System.Drawing.Size(149, 22);
+            this.srcTxtNome.Size = new System.Drawing.Size(113, 20);
             this.srcTxtNome.TabIndex = 0;
             // 
             // groupBox2
@@ -227,11 +219,9 @@
             this.groupBox2.Controls.Add(this.txtCognome);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txtNome);
-            this.groupBox2.Location = new System.Drawing.Point(287, 513);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(215, 417);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(775, 170);
+            this.groupBox2.Size = new System.Drawing.Size(581, 138);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Aggiunta";
@@ -240,84 +230,75 @@
             // 
             this.txtNote.BackColor = System.Drawing.SystemColors.Window;
             this.txtNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNote.Location = new System.Drawing.Point(588, 23);
-            this.txtNote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNote.Location = new System.Drawing.Point(441, 19);
             this.txtNote.Name = "txtNote";
             this.txtNote.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.txtNote.Size = new System.Drawing.Size(177, 98);
+            this.txtNote.Size = new System.Drawing.Size(134, 80);
             this.txtNote.TabIndex = 14;
             this.txtNote.Text = "";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(535, 27);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(401, 22);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 17);
+            this.label10.Size = new System.Drawing.Size(33, 13);
             this.label10.TabIndex = 13;
             this.label10.Text = "Note:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(273, 101);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(205, 82);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 17);
+            this.label7.Size = new System.Drawing.Size(48, 13);
             this.label7.TabIndex = 12;
             this.label7.Text = "Indirizzo:";
             // 
             // txtIndirizzo
             // 
-            this.txtIndirizzo.Location = new System.Drawing.Point(368, 97);
-            this.txtIndirizzo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIndirizzo.Location = new System.Drawing.Point(276, 79);
             this.txtIndirizzo.Name = "txtIndirizzo";
-            this.txtIndirizzo.Size = new System.Drawing.Size(149, 22);
+            this.txtIndirizzo.Size = new System.Drawing.Size(113, 20);
             this.txtIndirizzo.TabIndex = 11;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(273, 64);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(205, 52);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 17);
+            this.label8.Size = new System.Drawing.Size(27, 13);
             this.label8.TabIndex = 10;
             this.label8.Text = "Fax:";
             // 
             // txtFax
             // 
-            this.txtFax.Location = new System.Drawing.Point(368, 60);
-            this.txtFax.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFax.Location = new System.Drawing.Point(276, 49);
             this.txtFax.Name = "txtFax";
-            this.txtFax.Size = new System.Drawing.Size(149, 22);
+            this.txtFax.Size = new System.Drawing.Size(113, 20);
             this.txtFax.TabIndex = 9;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(273, 27);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(205, 22);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 17);
+            this.label9.Size = new System.Drawing.Size(50, 13);
             this.label9.TabIndex = 8;
             this.label9.Text = "Cellulare:";
             // 
             // txtCell
             // 
-            this.txtCell.Location = new System.Drawing.Point(368, 23);
-            this.txtCell.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCell.Location = new System.Drawing.Point(276, 19);
             this.txtCell.Name = "txtCell";
-            this.txtCell.Size = new System.Drawing.Size(149, 22);
+            this.txtCell.Size = new System.Drawing.Size(113, 20);
             this.txtCell.TabIndex = 7;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(588, 132);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Location = new System.Drawing.Point(441, 107);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(179, 28);
+            this.btnAdd.Size = new System.Drawing.Size(134, 23);
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Aggiungi";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -326,63 +307,56 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 101);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(6, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 17);
+            this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Telefono:";
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(103, 97);
-            this.txtTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTel.Location = new System.Drawing.Point(77, 79);
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(149, 22);
+            this.txtTel.Size = new System.Drawing.Size(113, 20);
             this.txtTel.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 64);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(6, 52);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 17);
+            this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 3;
             this.label5.Text = "Cognome:";
             // 
             // txtCognome
             // 
-            this.txtCognome.Location = new System.Drawing.Point(103, 60);
-            this.txtCognome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCognome.Location = new System.Drawing.Point(77, 49);
             this.txtCognome.Name = "txtCognome";
-            this.txtCognome.Size = new System.Drawing.Size(149, 22);
+            this.txtCognome.Size = new System.Drawing.Size(113, 20);
             this.txtCognome.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 27);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(6, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 17);
+            this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 1;
             this.label6.Text = "Nome:";
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(103, 23);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNome.Location = new System.Drawing.Point(77, 19);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(149, 22);
+            this.txtNome.Size = new System.Drawing.Size(113, 20);
             this.txtNome.TabIndex = 0;
             // 
             // btnOrderNomeAsc
             // 
-            this.btnOrderNomeAsc.Location = new System.Drawing.Point(17, 692);
-            this.btnOrderNomeAsc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrderNomeAsc.Location = new System.Drawing.Point(13, 562);
             this.btnOrderNomeAsc.Name = "btnOrderNomeAsc";
-            this.btnOrderNomeAsc.Size = new System.Drawing.Size(516, 28);
+            this.btnOrderNomeAsc.Size = new System.Drawing.Size(150, 23);
             this.btnOrderNomeAsc.TabIndex = 8;
             this.btnOrderNomeAsc.Text = "Ordina per Nome ASC";
             this.btnOrderNomeAsc.UseVisualStyleBackColor = true;
@@ -390,10 +364,9 @@
             // 
             // btnOrderNomeDesc
             // 
-            this.btnOrderNomeDesc.Location = new System.Drawing.Point(17, 727);
-            this.btnOrderNomeDesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrderNomeDesc.Location = new System.Drawing.Point(13, 591);
             this.btnOrderNomeDesc.Name = "btnOrderNomeDesc";
-            this.btnOrderNomeDesc.Size = new System.Drawing.Size(516, 28);
+            this.btnOrderNomeDesc.Size = new System.Drawing.Size(150, 23);
             this.btnOrderNomeDesc.TabIndex = 9;
             this.btnOrderNomeDesc.Text = "Ordina per Nome DESC";
             this.btnOrderNomeDesc.UseVisualStyleBackColor = true;
@@ -401,10 +374,9 @@
             // 
             // btnOrderCognomeDesc
             // 
-            this.btnOrderCognomeDesc.Location = new System.Drawing.Point(541, 727);
-            this.btnOrderCognomeDesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrderCognomeDesc.Location = new System.Drawing.Point(181, 591);
             this.btnOrderCognomeDesc.Name = "btnOrderCognomeDesc";
-            this.btnOrderCognomeDesc.Size = new System.Drawing.Size(523, 28);
+            this.btnOrderCognomeDesc.Size = new System.Drawing.Size(150, 23);
             this.btnOrderCognomeDesc.TabIndex = 11;
             this.btnOrderCognomeDesc.Text = "Ordina per Cognome DESC";
             this.btnOrderCognomeDesc.UseVisualStyleBackColor = true;
@@ -412,10 +384,9 @@
             // 
             // btnOrderCognomeAsc
             // 
-            this.btnOrderCognomeAsc.Location = new System.Drawing.Point(541, 692);
-            this.btnOrderCognomeAsc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrderCognomeAsc.Location = new System.Drawing.Point(181, 562);
             this.btnOrderCognomeAsc.Name = "btnOrderCognomeAsc";
-            this.btnOrderCognomeAsc.Size = new System.Drawing.Size(523, 28);
+            this.btnOrderCognomeAsc.Size = new System.Drawing.Size(150, 23);
             this.btnOrderCognomeAsc.TabIndex = 10;
             this.btnOrderCognomeAsc.Text = "Ordina per Cognome ASC";
             this.btnOrderCognomeAsc.UseVisualStyleBackColor = true;
@@ -430,8 +401,8 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1077, 32);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(808, 27);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -443,52 +414,52 @@
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 28);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 23);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // aggiornaToolStripMenuItem
             // 
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
-            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
             this.aggiornaToolStripMenuItem.Click += new System.EventHandler(this.aggiornaToolStripMenuItem_Click);
             // 
             // sourceToolStripMenuItem
             // 
             this.sourceToolStripMenuItem.Name = "sourceToolStripMenuItem";
-            this.sourceToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.sourceToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.sourceToolStripMenuItem.Text = "Source";
             this.sourceToolStripMenuItem.Click += new System.EventHandler(this.sourceToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(120, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // cbAlfabeto
             // 
             this.cbAlfabeto.Name = "cbAlfabeto";
-            this.cbAlfabeto.Size = new System.Drawing.Size(75, 28);
+            this.cbAlfabeto.Size = new System.Drawing.Size(75, 23);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(28, 28);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 23);
             this.toolStripMenuItem1.Text = "?";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -512,11 +483,31 @@
             this.tableAdapterManager.nominativiTableAdapter = this.nominativiTableAdapter;
             this.tableAdapterManager.UpdateOrder = Rubrica.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(352, 567);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(82, 13);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Totale Contatti: ";
+            // 
+            // txtTot
+            // 
+            this.txtTot.Location = new System.Drawing.Point(440, 564);
+            this.txtTot.Name = "txtTot";
+            this.txtTot.ReadOnly = true;
+            this.txtTot.Size = new System.Drawing.Size(30, 20);
+            this.txtTot.TabIndex = 14;
+            this.txtTot.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1077, 767);
+            this.ClientSize = new System.Drawing.Size(808, 623);
+            this.Controls.Add(this.txtTot);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnOrderCognomeDesc);
             this.Controls.Add(this.btnOrderCognomeAsc);
             this.Controls.Add(this.btnOrderNomeDesc);
@@ -528,7 +519,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Rubrica LAN";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -593,6 +583,8 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox cbAlfabeto;
         private System.Windows.Forms.ToolStripMenuItem sourceToolStripMenuItem;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtTot;
     }
 }
 
