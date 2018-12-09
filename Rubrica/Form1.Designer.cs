@@ -78,6 +78,9 @@
             this.tableAdapterManager = new Rubrica.DataSet1TableAdapters.TableAdapterManager();
             this.label11 = new System.Windows.Forms.Label();
             this.txtTot = new System.Windows.Forms.TextBox();
+            this.impExpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importDataFromCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportDataInCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -397,6 +400,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.impExpToolStripMenuItem,
             this.cbAlfabeto,
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -420,26 +424,26 @@
             // aggiornaToolStripMenuItem
             // 
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
-            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
             this.aggiornaToolStripMenuItem.Click += new System.EventHandler(this.aggiornaToolStripMenuItem_Click);
             // 
             // sourceToolStripMenuItem
             // 
             this.sourceToolStripMenuItem.Name = "sourceToolStripMenuItem";
-            this.sourceToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.sourceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sourceToolStripMenuItem.Text = "Source";
             this.sourceToolStripMenuItem.Click += new System.EventHandler(this.sourceToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(120, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -500,6 +504,28 @@
             this.txtTot.Size = new System.Drawing.Size(30, 20);
             this.txtTot.TabIndex = 14;
             this.txtTot.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // impExpToolStripMenuItem
+            // 
+            this.impExpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importDataFromCSVToolStripMenuItem,
+            this.exportDataInCSVToolStripMenuItem});
+            this.impExpToolStripMenuItem.Enabled = false;
+            this.impExpToolStripMenuItem.Name = "impExpToolStripMenuItem";
+            this.impExpToolStripMenuItem.Size = new System.Drawing.Size(63, 23);
+            this.impExpToolStripMenuItem.Text = "Imp/Exp";
+            // 
+            // importDataFromCSVToolStripMenuItem
+            // 
+            this.importDataFromCSVToolStripMenuItem.Name = "importDataFromCSVToolStripMenuItem";
+            this.importDataFromCSVToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.importDataFromCSVToolStripMenuItem.Text = "Import Data from CSV";
+            // 
+            // exportDataInCSVToolStripMenuItem
+            // 
+            this.exportDataInCSVToolStripMenuItem.Name = "exportDataInCSVToolStripMenuItem";
+            this.exportDataInCSVToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.exportDataInCSVToolStripMenuItem.Text = "Export Data  in CSV";
             // 
             // Form1
             // 
@@ -585,6 +611,9 @@
         private System.Windows.Forms.ToolStripMenuItem sourceToolStripMenuItem;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtTot;
+        private System.Windows.Forms.ToolStripMenuItem impExpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importDataFromCSVToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportDataInCSVToolStripMenuItem;
     }
 }
 
