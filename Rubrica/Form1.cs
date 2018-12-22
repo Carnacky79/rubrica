@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Xml;
+using System.IO;
+using System.Data.OleDb;
 
 namespace Rubrica
 {
@@ -289,6 +291,80 @@ namespace Rubrica
                     this.nominativiTableAdapter.Connection.ConnectionString = config.ConnectionStrings.ConnectionStrings["Rubrica.Properties.Settings.rubricaConnectionString"].ToString();
                     this.nominativiTableAdapter.Connection.Open();
                     this.nominativiTableAdapter.Fill(this.dataSet1.nominativi);
+
+                    LoadList();
+                    loadComboBox();
+                }
+            }
+        }
+
+        private void exportDataInCSVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var filePath = string.Empty;
+            StringBuilder str = new StringBuilder();
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.InitialDirectory = "C:\\";  
+            saveFileDialog1.Title = "Esporta Rubrica in CSV";
+            saveFileDialog1.DefaultExt = "csv";
+            saveFileDialog1.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                filePath = Path.GetFullPath(saveFileDialog1.FileName);
+            }
+
+            
+            foreach (DataRow dr in this.dataSet1.nominativi)
+            {
+                foreach (object field in dr.ItemArray)
+                {
+                    str.Append(field.ToString() + ",");
+                }
+                str.Replace(",", Environment.NewLine, str.Length - 1, 1);
+            }
+
+            try
+            {
+                File.WriteAllText(filePath, str.ToString());
+                MessageBox.Show("File salvato correttamente", "Salvataggio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("File non salvato correttamente", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void importDataFromCSVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var filePath = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "CSV File (*.csv)|*.csv";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+
+                    OleDbConnection conn = new OleDbConnection
+                   ("Provider=Microsoft.Jet.OleDb.4.0; Data Source = " +
+                     Path.GetDirectoryName(filePath) +
+                     "; Extended Properties = \"Text;HDR=YES;FMT=Delimited\"");
+
+                    conn.Open();
+
+                    OleDbDataAdapter adapter = new OleDbDataAdapter
+                           ("SELECT * FROM " + Path.GetFileName(filePath), conn);
+
+                    
+                    adapter.Fill(this.dataSet1.nominativi);
+
+                    conn.Close();
 
                     LoadList();
                     loadComboBox();
